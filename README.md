@@ -1,4 +1,4 @@
-## My Project
+## README
 
 TODO: Fill this README out!
 
