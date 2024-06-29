@@ -3,7 +3,7 @@
 # catalog_query_transcribe_transcripts_sample.py
 #
 # This Python script:
-# -Uses Amazon Bedrock Knowledge Base to send a query to Claude Anthropic v2.1 LLM
+# -Uses Amazon Bedrock Knowledge Base to send a query to Claude Anthropic LLM
 # -The Knowledge Base is synced with an S3 bucket containing transcriptions of podcast episodes in JSON format
 # -The episodes were transcribed by Amazon Transcribe
 # -Upon receiving the query, this script will call Knowledge Base API which will orchestrate RAG workflow
@@ -69,9 +69,13 @@ def retrieveAndGenerate(input, kbId, sessionId=None, model_id = "anthropic.claud
     
 query = "Why did AWS acquire Annupura Labs?"
 
+#Specify which LLM Model
 model_id = 'anthropic.claude-v2'
+#model_id = 'anthropic.claude-3-sonnet-20240229-v1:0'
+
 region_id = "us-west-2" # replace it with the region you're running sagemaker notebook
-kb_id = "XCCECUI94P"   #OpenSearch Serverless
+
+kb_id = "EWVZUIOQ3K"  #Use Titan Text Embedding v2
 
 print ("Query: "+ query + "\n")
 
@@ -220,4 +224,6 @@ print('Start Time in hh:mm:ss:', td)
 start_time_hh_mm_ss = str(timedelta(seconds=sec))
 print ("From episode: "+ title)
 
+
+print("Complete!")
 
