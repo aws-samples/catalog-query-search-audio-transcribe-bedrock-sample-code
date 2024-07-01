@@ -75,7 +75,7 @@ model_id = 'anthropic.claude-v2'
 
 region_id = "us-west-2" # replace it with the region you're running sagemaker notebook
 
-kb_id = "EWVZUIOQ3K"  #Use Titan Text Embedding v2
+kb_id = "**********" 
 
 print ("Query: "+ query + "\n")
 
